@@ -22,7 +22,7 @@ def display_table(df):
 def add_data(df):
     with st.form("add_data_form"):
         tid = len(df)
-        amt = st.number_input("Amount", step=1)
+        amt = st.number_input("Amount", step=0.01)
         desc = st.text_input("Description")
         category = st.selectbox(label = "Category", options = ["Food", "Clothes", "BJJ", "Games", "Cammy"])
         submitted = st.form_submit_button("Add Transaction")
