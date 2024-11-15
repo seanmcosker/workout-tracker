@@ -35,6 +35,7 @@ def add_data(df):
                 "Running Total": [0], #placeholder
                 'Category': [category]})
             df = pd.concat([df, new_data], ignore_index=True)
+            df["Running Total"] = df.Amount.cumsum()
             save_data(df)
             st.success("Transaction added successfully!")
             st.rerun()
